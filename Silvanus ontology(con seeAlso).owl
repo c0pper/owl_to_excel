@@ -69,27 +69,32 @@
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_fire_characteristic -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Impact"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vulnerable_object"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_fire_characteristic">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Climate_parameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_characteristic"/>
+        <rdfs:comment>Indicates entities that affect a fire characteristic</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_fire_characteristic -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_fire_risk -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_fire_characteristic">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Climate_parameter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_burned"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_intensity"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_severity"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_speed"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_spread_direction"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Flame_height"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_fire_risk">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Preventive_procedure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_risk"/>
+        <rdfs:comment>Indicates entities that affect a fire risk</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_vulnerable_object -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#affects_vulnerable_object">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Impact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vulnerable_object"/>
+        <rdfs:comment>Links an affected object to an impact.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -98,7 +103,12 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#causes_fire">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#fire_caused_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Cause"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Ignition_probability_factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
+        <rdfs:comment>Links a cause to a fire</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -109,40 +119,86 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Incident"/>
+        <rdfs:comment>Links a fire to an incident</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contains -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contains_detection -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contains">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contains_detection">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Dataset"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Detection"/>
+        <rdfs:comment>Indicates detections contained in a dataset</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#detects -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contributes_to_buildup_index -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#detects">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contributes_to_buildup_index">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Drought_fuel_moisture"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Duff_fuel_moisture"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Buildup_index"/>
+        <rdfs:comment>Indicated what entity contributes to buildup index</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contributes_to_fire_weather_index -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contributes_to_fire_weather_index">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Buildup_index"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Initial_spread_index"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_weather_index"/>
+        <rdfs:comment>Indicated what entity contributes to fire weather index</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contributes_to_initial_spread_index -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#contributes_to_initial_spread_index">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Wind_speed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Initial_spread_index"/>
+        <rdfs:comment>Indicated what entity contributes to initial spread index</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#detects_incident -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#detects_incident">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Detection"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Incident"/>
+        <rdfs:comment>Links a detection to an incident</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#detects_vulnerable_objects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#detects_vulnerable_objects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Detection"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vulnerable_object"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#fire_caused_by -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_age_group -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#fire_caused_by"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_age_group">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Human"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Age_group"/>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#hasConstructionMaterial -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_area_under_pressure -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#hasConstructionMaterial">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Asset"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_area_under_pressure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Community"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_under_pressure"/>
     </owl:ObjectProperty>
     
 
@@ -162,7 +218,31 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_biodiversity_index">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_burned"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_biome -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_biome">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_burned"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Location"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biome"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_climate_parameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_climate_parameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_burned"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Incident"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Climate_parameter"/>
+        <rdfs:comment>Links a climate parameter measurement to an entity.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -186,12 +266,58 @@
     
 
 
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fire_regime_condition_class -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fire_regime_condition_class">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_regime_condition_class"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fire_risk -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fire_risk">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_risk"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fire_weather_index -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fire_weather_index">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_weather_index"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fuel_class -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fuel_class">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel_class"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fuel_continuity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fuel_continuity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel_continuity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fuel_loading -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_fuel_loading">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel_loading"/>
     </owl:ObjectProperty>
     
 
@@ -241,6 +367,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Incident"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Impact"/>
+        <rdfs:comment>Links an impact to an incident.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -249,6 +376,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_infrastructure_development">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Community"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Infrastructure_development"/>
     </owl:ObjectProperty>
     
 
@@ -257,15 +385,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_living_being_stats">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Animal"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Living_being_stat"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
     
 
 
@@ -279,11 +400,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_rea_under_pressure -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_reliability -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_rea_under_pressure">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Community"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_under_pressure"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_reliability">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Reliability"/>
     </owl:ObjectProperty>
     
 
@@ -298,11 +419,28 @@
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_space_time -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_response_resource -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_space_time">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_response_resource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Response_resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_spatial_entity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_spatial_entity">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Spatial_entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_temporal_entity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_temporal_entity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Temporal_entity"/>
     </owl:ObjectProperty>
     
@@ -321,38 +459,41 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_vegetation_stat">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_living_being_stats"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biome"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetation_stat"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#involves -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#involves_vulnerable_object -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#involves">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#involves_vulnerable_object">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Incident"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vulnerable_object"/>
+        <rdfs:comment>Indicates the incident a vulnerable object is involved in.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#observes -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#observes_parameter -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#observes">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#observes_parameter">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Sensor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Climate_parameter"/>
+        <rdfs:comment>Indicates which parameter is observed by a sensor</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#produces -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#produces_dataset -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#produces">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_module"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#produces_dataset">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Sensor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_UP"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Dataset"/>
+        <rdfs:comment>Indicates what entites produce what dataset</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -366,11 +507,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#relates_to_silvanus_module -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#relates_to_silvanus_UP -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#relates_to_silvanus_module">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#relates_to_silvanus_UP">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Media_item"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_module"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_UP"/>
     </owl:ObjectProperty>
     
 
@@ -612,7 +753,7 @@
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_Of_Evergreen_Forest -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_Of_Evergreen_Forest">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Forest"/>
         <rdfs:comment>An area of a planet&apos;s surface which is primarily covered by a forest in which the majority of trees maintain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</rdfs:comment>
         <rdfs:seeAlso>http://purl.obolibrary.org/obo/ENVO_01000843</rdfs:seeAlso>
     </owl:Class>
@@ -632,7 +773,7 @@
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_Of_Mixed_Forest -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_Of_Mixed_Forest">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Forest"/>
         <rdfs:comment>An area of a planet&apos;s surface which is primarily covered by a forest in which the trees are a mixture between those that lose and retain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</rdfs:comment>
         <rdfs:seeAlso>http://purl.obolibrary.org/obo/ENVO_01000855</rdfs:seeAlso>
     </owl:Class>
@@ -683,6 +824,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Area_burned">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire_characteristic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Monitored_area"/>
         <rdfs:comment>It&apos;s the total area affected by fire in a burn event.</rdfs:comment>
         <rdfs:seeAlso>http://cerrado.linkeddata.es/ecology/fire#AreaBurned</rdfs:seeAlso>
     </owl:Class>
@@ -894,12 +1036,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Brush_fire">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#fire_caused_by"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Negligence"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>A fire in low-growing and brush</rdfs:comment>
         <rdfs:seeAlso>http://cerrado.linkeddata.es/ecology/fire#BrushFire</rdfs:seeAlso>
     </owl:Class>
@@ -972,9 +1108,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#CanopyCover -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Canopy_cover -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#CanopyCover">
+    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Canopy_cover">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
         <rdfs:comment>Forest canopy cover, also known as canopy coverage or crown cover, is defined as the proportion of the forest covered by the vertical projection of the tree crowns</rdfs:comment>
         <rdfs:seeAlso>http://crossforest.eu/ilu/ontology/CanopyCover</rdfs:seeAlso>
@@ -1380,7 +1516,7 @@ rather than anger at a specific individual within the group).
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Data_analysis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Data_analysis">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_module"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_UP"/>
         <rdfs:comment>A type of task carried out by a silvanus module involving data analysis.</rdfs:comment>
         <rdfs:seeAlso>https://raw.githubusercontent.com/beAWARE-project/ontology/master/beAWARE_ontology#DataAnalysis</rdfs:seeAlso>
     </owl:Class>
@@ -1635,6 +1771,15 @@ The Duff Moisture Code (DMC) is a numeric rating of the average moisture content
     
 
 
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Elder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Elder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Age_group"/>
+        <rdfs:comment xml:lang="en">An adult is a person older than 60 years of age</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Electric_energy_supply -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Electric_energy_supply">
@@ -1648,7 +1793,6 @@ The Duff Moisture Code (DMC) is a numeric rating of the average moisture content
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Electrical_infrastructure_criticallity -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Electrical_infrastructure_criticallity">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Infrastructure"/>
         <silvanusOntology:source>Portuguese pilot</silvanusOntology:source>
         <rdfs:comment>Criticallity, based on grid redundancy and voltage characteristics.</rdfs:comment>
     </owl:Class>
@@ -1866,9 +2010,9 @@ bird, fall of the line, etc.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire-prone_invasive_specie -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire-prone_invasive_species -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire-prone_invasive_specie">
+    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fire-prone_invasive_species">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetation_type"/>
         <silvanusOntology:input>Known locations (from land cover maps, citizen science data repositories and location uploaded by stakeholders); topography and infrastructures to further assess risk of invasion</silvanusOntology:input>
         <silvanusOntology:output>Map of distribution of invasive species and list of locations requiring preventive action</silvanusOntology:output>
@@ -2156,7 +2300,7 @@ Its the maximum height a flame achieve in a fire event.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Forest -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Forest">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <silvanusOntology:source>https://www.fs.fed.us/database/feis/glossary2.html</silvanusOntology:source>
         <rdfs:comment>A formation dominated by trees, in which the canopy is more closed than open [112]. Generally, overstory trees are &gt;16 feet (5 m) tall and have 60% to 100% cover [75]. When describing forests, use of a dash indicates an overstory/understory relationship (e.g., northern red oak/America witch-hazel forest). Compare with grassland, shrubland, wooded shrubland, woodland, savanna.</rdfs:comment>
     </owl:Class>
@@ -2297,7 +2441,8 @@ Its the maximum height a flame achieve in a fire event.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Grassland -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Grassland">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Grassland_Area"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <silvanusOntology:source>https://www.fs.fed.us/database/feis/glossary2.html#grassland</silvanusOntology:source>
         <rdfs:comment>A formation dominated by grasses (&gt;25% cover), with shrubs and trees constituting &lt;25% of total cover [75]. Compare with shrubland, woodland, wooded shrubland, savanna, forest.</rdfs:comment>
     </owl:Class>
@@ -2519,7 +2664,7 @@ Its the maximum height a flame achieve in a fire event.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Hydrant -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Hydrant">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Response_resource"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Water_source"/>
         <silvanusOntology:source>Croatian pilot</silvanusOntology:source>
         <rdfs:comment>A fitting in a street or other public place with a nozzle by which a hose may be attached to a water main.</rdfs:comment>
     </owl:Class>
@@ -2649,6 +2794,15 @@ Its the maximum height a flame achieve in a fire event.</rdfs:comment>
         <rdfs:comment>Represents critical infrastructure that is in danger during a natural disaster.</rdfs:comment>
         <rdfs:seeAlso>http://www.semanticweb.org/earthquake#InfrastructureLoss</rdfs:seeAlso>
         <rdfs:seeAlso>https://raw.githubusercontent.com/beAWARE-project/ontology/master/beAWARE_ontology#Infrastructure</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Infrastructure_development -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Infrastructure_development">
+        <silvanusOntology:source>Development of infrastructures in a community</silvanusOntology:source>
+        <silvanusOntology:source>Indonesian pilot</silvanusOntology:source>
     </owl:Class>
     
 
@@ -2874,12 +3028,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Centimeters -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Centimeters">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Centimeters"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInCentimeters</rdfs:seeAlso>
     </owl:Class>
@@ -2889,12 +3037,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Decimeters -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Decimeters">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Decimeters"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInDecimeters</rdfs:seeAlso>
     </owl:Class>
@@ -2904,12 +3046,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Degrees -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Degrees">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Degrees"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInDegrees</rdfs:seeAlso>
     </owl:Class>
@@ -2919,12 +3055,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Gradians -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Gradians">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Gradians"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInGradians</rdfs:seeAlso>
     </owl:Class>
@@ -2934,12 +3064,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Hectares -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Hectares">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Hectares"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInHectares</rdfs:seeAlso>
     </owl:Class>
@@ -2949,12 +3073,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Meters -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Meters">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Meters"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInMeters</rdfs:seeAlso>
     </owl:Class>
@@ -2964,12 +3082,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Millimeters -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Millimeters">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Millimeters"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInMillimeters</rdfs:seeAlso>
     </owl:Class>
@@ -2979,12 +3091,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Square_Meters -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Square_Meters">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Square_Meters"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInSquareMeters</rdfs:seeAlso>
     </owl:Class>
@@ -2994,12 +3100,6 @@ mentally ill.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Years -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Years">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#has_measure"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity_in_Years"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measurable_Entity"/>
         <rdfs:seeAlso>http://crossforest.eu/measures/ontology/MeasurableEntityInYears</rdfs:seeAlso>
     </owl:Class>
@@ -4168,7 +4268,7 @@ This is not an exhaustive list.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Savanna -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Savanna">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <silvanusOntology:source>https://www.fs.fed.us/database/feis/glossary2.html#savanna</silvanusOntology:source>
         <rdfs:comment>A formation in which the overstory is dominated by woody vegetation growing as scattered individuals or clusters. The dominant life form may be trees (i.e., tree savanna; dominants are &gt;6.5 feet (2 m) tall) or shrubs (i.e., shrub savanna; dominants are ≤6.5 feet (2 m) tall) [112]. The understory is composed of grass; shrubs are sparse to absent [113,120]. When describing savannas, use of a hyphen indicates about equal cover of dominant overstory and understory species (e.g., Oregon white oak-California brome savanna). Compare with grassland, shrubland woodland, wooded shrubland, forest.</rdfs:comment>
     </owl:Class>
@@ -4270,7 +4370,7 @@ This is not an exhaustive list.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Shrubland -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Shrubland">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <silvanusOntology:source>https://www.fs.fed.us/database/feis/glossary2.html#shrubland</silvanusOntology:source>
         <rdfs:comment>A formation in which the overstory is dominated by shrubs 1.6 to 16 feet (0.5-5 m) tall, and trees have &lt;5% total cover [75]. Compare with grassland, woodland, wooded shrubland, savanna, forest.</rdfs:comment>
     </owl:Class>
@@ -4287,9 +4387,9 @@ This is not an exhaustive list.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_module -->
+    <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_UP -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_module">
+    <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Silvanus_UP">
         <rdfs:comment>A task that has to do with analyzing or processing items.</rdfs:comment>
         <rdfs:seeAlso>https://raw.githubusercontent.com/beAWARE-project/ontology/master/beAWARE_ontology#Task</rdfs:seeAlso>
     </owl:Class>
@@ -4986,7 +5086,6 @@ This is not an exhaustive list.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
         <rdfs:comment>A vegetated area is a geographic feature which has ground cover dominated by plant communities.</rdfs:comment>
         <rdfs:seeAlso>http://purl.obolibrary.org/obo/ENVO_01001305</rdfs:seeAlso>
     </owl:Class>
@@ -5200,7 +5299,6 @@ This is not an exhaustive list.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Water_infrastructures_criticality -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Water_infrastructures_criticality">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Infrastructure"/>
         <silvanusOntology:output>Water  Infrastructures Criticallity  displayed on map</silvanusOntology:output>
         <silvanusOntology:source>Portuguese pilot</silvanusOntology:source>
         <rdfs:comment>Criticallity, based on the design flow and system´s redundancy characteristics</rdfs:comment>
@@ -5313,7 +5411,7 @@ This is not an exhaustive list.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Wooded_shrubland -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Wooded_shrubland">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <silvanusOntology:source>https://www.fs.fed.us/database/feis/glossary2.html#WoodedShrubland</silvanusOntology:source>
         <rdfs:comment>A formation dominated by woody species, in which the proportion of shrubs is generally greater than the proportion of trees [112]. Grass and bare ground are usually present but not required for defining this formation. Compare with grassland, shrubland, wooded shrubland, savanna, forest.</rdfs:comment>
     </owl:Class>
@@ -5323,7 +5421,7 @@ This is not an exhaustive list.</rdfs:comment>
     <!-- http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Woodland -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Woodland">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biodiversity_index"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
         <silvanusOntology:source>https://www.fs.fed.us/database/feis/glossary2.html#woodland</silvanusOntology:source>
         <rdfs:comment>A formation in which tree cover is greater than shrub cover, but the canopy is not closed [112]. Generally, overstory trees are &gt;16 feet (5 m) tall and have 25% to 60% cover [75]. When describing woodlands, use of a dash indicates an overstory/understory relationship (e.g., bur oak/big bluestem woodland). Compare with grassland, shrubland, wooded shrubland, savanna, forest.</rdfs:comment>
     </owl:Class>
@@ -5835,47 +5933,6 @@ This is not an exhaustive list.</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Temperate_Biome"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Terrestrial_Biome"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Tropical_Biome"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Animal"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biome"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Damage_quantification"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Diametric_class"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Dominant_formation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Erosion"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Evnironment_index"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Geology"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Grazing_activity"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Hydrography"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Land_use"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Measure"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#MeasureInUnities"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Topography"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetation_growth"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetation_index"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Animal"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Biome"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Damage_quantification"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Evnironment_index"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Fuel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Geology"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Grazing_activity"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Hydrography"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Land_use"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Topography"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetated_area"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetation_growth"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/smarotta/ontologies/2022/4/silvanusOntology#Vegetation_index"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
