@@ -1,7 +1,7 @@
 from main import onto, render_using_name, classes, properties
 
-fire_subclasses = onto.Fire.subclasses()
-spatial_subclasses = onto.Spatial_entity.subclasses()
+# fire_subclasses = onto.Fire.subclasses()
+# spatial_subclasses = onto.Spatial_entity.subclasses()
 
 def subclasses_list_to_str(onto_class):
     subclasses = list(onto_class.subclasses())
@@ -54,9 +54,14 @@ def print_subclasses_and_props(class_):
     get_prop_desc_for_class(class_)
 
 
-
-classes_ = [onto.Biodiversity_index, onto.Vegetated_area, onto.Vegetation_stat, onto.Living_being_stat, onto.Sensor, onto.Climate_parameter, onto.Response_resource, onto.Monitored_area, onto.Vulnerable_object]
+classes_ = list(onto.individuals())
+# classes_ = [onto.Biodiversity_index, onto.Vegetated_area, onto.Vegetation_stat, onto.Living_being_stat, onto.Sensor, onto.Climate_parameter, onto.Response_resource, onto.Monitored_area, onto.Vulnerable_object]
 for c in classes_:
-    print(c.name)
-    print_subclasses_and_props(c)
+    print(type(c), c)
+    # print_subclasses_and_props(c)
     print("\n\n")
+
+list(default_world.sparql("""
+           SELECT (COUNT(?x) AS ?nb)
+           { ?x a owl:Class . }
+    """))

@@ -8,7 +8,7 @@ def render_using_name(entity):
 
 set_render_func(render_using_name)
 
-onto = get_ontology("onto.owl").load()
+onto = get_ontology(r"C:\Users\smarotta\Documents\personal_onto.owl").load()
 
 classes = list(onto.classes())
 properties = list(onto.object_properties())
